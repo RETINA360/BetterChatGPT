@@ -28,14 +28,17 @@ function App() {
   useEffect(() => {
     // legacy local storage
     const oldChats = localStorage.getItem('chats');
-    const apiKey = localStorage.getItem('apiKey');
+    //const apiKey = localStorage.getItem('apiKey');
     const theme = localStorage.getItem('theme');
 
-    if (apiKey) {
+    console.log(import.meta.env['VITE_OPENAI_API_KEY'])
+
+    /*if (apiKey) {
       // legacy local storage
       setApiKey(apiKey);
       localStorage.removeItem('apiKey');
-    }
+    }*/
+   setApiKey(import.meta.env['VITE_OPENAI_API_KEY'])
 
     if (theme) {
       // legacy local storage
